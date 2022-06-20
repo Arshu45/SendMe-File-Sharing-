@@ -3,6 +3,9 @@ const app = express();
 const path = require("path");
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
+const dotenv = require("dotenv");
+dotenv.config({ path: __dirname + "../config/.env" });
+
 app.use(express.static("../public"));
 app.use(express.json());
 const connectDB = require("../config/db");
