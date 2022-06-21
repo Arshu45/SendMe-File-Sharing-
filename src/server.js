@@ -6,7 +6,9 @@ const PORT = process.env.PORT || 3000;
 const dotenv = require("dotenv");
 dotenv.config({ path: __dirname + "../config/.env" });
 
-app.use(express.static("../public"));
+const publicDirectoryPath = path.join(__dirname, "../public");
+
+app.use(express.static(publicDirectoryPath));
 app.use(express.json());
 const connectDB = require("../config/db");
 connectDB();
